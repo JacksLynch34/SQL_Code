@@ -1,0 +1,13 @@
+
+SELECT SeatType, COUNT(SeatType) AS [Frequency], SUM(TicketPrice) AS [Sum of Ticket Price], AVG(TicketPrice) AS [AVG Ticket Price], MAX(TicketPrice) AS [Max Ticket Price], MIN(TicketPrice) AS [Min Ticket Price]
+FROM  ManifestTable
+GROUP BY SeatType
+ORDER BY AVG(TicketPrice) DESC;
+
+
+
+Select FlightNumber, COUNT(PassengerNumber) AS [Number of Passengers]
+FROM ManifestTable
+GROUP BY FlightNumber
+HAVING COUNT(PassengerNumber) >=10
+ORDER BY COUNT(PassengerNumber) DESC;
